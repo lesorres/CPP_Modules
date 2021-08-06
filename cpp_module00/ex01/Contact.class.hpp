@@ -6,7 +6,7 @@
 /*   By: kmeeseek <kmeeseek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 20:39:01 by kmeeseek          #+#    #+#             */
-/*   Updated: 2021/08/06 00:08:53 by kmeeseek         ###   ########.fr       */
+/*   Updated: 2021/08/06 22:59:31 by kmeeseek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,16 @@ class Contact {
 	std::string _darkest_secret;
 
 	public:
-		void fill_in_firstname(std::string str);
-		std::string get_cont(std::string str);
 		void set_first_name(std::string str);
 		void set_last_name(std::string str);
 		void set_nickname(std::string str);
 		void set_phone_number(std::string str);
 		void set_darkest_secret(std::string str);
-		std::string get_input();
-
+		std::string get_first_name();
+		std::string get_last_name();
+		std::string get_nickname();
+		std::string get_phone_number();
+		std::string get_darkest_secret();
 		Contact(void);
 		~Contact(void);
 };
