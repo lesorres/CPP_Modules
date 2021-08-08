@@ -6,7 +6,7 @@
 /*   By: kmeeseek <kmeeseek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 22:42:21 by kmeeseek          #+#    #+#             */
-/*   Updated: 2021/08/07 23:51:51 by kmeeseek         ###   ########.fr       */
+/*   Updated: 2021/08/08 20:35:20 by kmeeseek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 
 # include "Contact.class.hpp"
 # include <string>
+#include <iostream>
+#include <sstream>
 
 class Phonebook {
 
@@ -26,7 +28,7 @@ class Phonebook {
 	public:
 		void init_contacts();
 		void add_new_contact();
-		void print_contacts();
+		int print_contacts_table();
 		static void print_contact_atribute(std::string);
 		void print_index_cont(int i);
 		int get_index();

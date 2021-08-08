@@ -6,7 +6,7 @@
 /*   By: kmeeseek <kmeeseek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 21:37:08 by kmeeseek          #+#    #+#             */
-/*   Updated: 2021/08/07 23:51:28 by kmeeseek         ###   ########.fr       */
+/*   Updated: 2021/08/08 20:45:19 by kmeeseek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,7 @@ int	main() {
 	
 	Phonebook book;
 	std::string line;
-	// std::cout << RED;
-	// std::cout << "hello";
 
-	// std::cout << F_NONE;	
 	line = "";
 	print_header();
 	while (line != "EXIT")
@@ -56,22 +53,26 @@ int	main() {
 		}
 		else if (line == "SEARCH")
 		{
-			book.print_contacts();
-			while (1)
+			if (!book.print_contacts_table())
 			{
-				std::getline(std::cin, line);
-				if (std::strchr("12345678", *(line.begin())))
+				while (1)
 				{
-					book.print_index_cont((int)(*(line.begin()) - 48));
-					break;
+					std::cout << "insert contact #: ";
+					std::getline(std::cin, line);
+					if (std::strchr("12345678",line[0]) && line.length() == 1)
+					{
+						std::cout << std::endl;
+						book.print_index_cont((int)(line[0] - 49));
+						break;
+					}
+					else
+						std::cout << "insert index from 1 to 8" << std::endl;
 				}
-				else
-					std::cout << "insert index from 1 to 8";
 			}
 		}
 		else if (line != "EXIT")
 			std::cout << "please enter one of the following commands: ADD, SEARCH or EXIT" << std::endl;
 	}
-	std::cout << "You exited the programm. Contacts not saved.\n";
+	std::cout << "You exited the programm. Contacts wasn't saved.\n";
 	return (0);
 }
