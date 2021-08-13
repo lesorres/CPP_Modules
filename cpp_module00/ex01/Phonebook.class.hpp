@@ -6,7 +6,7 @@
 /*   By: kmeeseek <kmeeseek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 22:42:21 by kmeeseek          #+#    #+#             */
-/*   Updated: 2021/08/08 20:35:20 by kmeeseek         ###   ########.fr       */
+/*   Updated: 2021/08/09 20:44:32 by kmeeseek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@
 #include <iostream>
 #include <sstream>
 
-class Phonebook {
+class Phonebook
+{
 
 	int _index;
 	int _full;

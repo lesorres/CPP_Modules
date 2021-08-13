@@ -22,8 +22,7 @@ class Account {
 public:
 
 	typedef Account		t;
-	// static int s_value = 0; // объявляем статическую переменную-член
-	
+
 	static int	getNbAccounts( void );
 	static int	getTotalAmount( void );
 	static int	getNbDeposits( void );

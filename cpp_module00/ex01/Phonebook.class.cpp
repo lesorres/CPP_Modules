@@ -6,7 +6,7 @@
 /*   By: kmeeseek <kmeeseek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 22:42:25 by kmeeseek          #+#    #+#             */
-/*   Updated: 2021/08/08 20:35:11 by kmeeseek         ###   ########.fr       */
+/*   Updated: 2021/08/09 20:44:25 by kmeeseek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ static void check_new_contact_fields(std::string message, std::string *line)
 	}
 	return ;
 }
-void Phonebook::add_new_contact(){
+void Phonebook::add_new_contact()
+{
 	std::string line;
 
 	std::cout << std::endl;
@@ -72,14 +73,16 @@ void Phonebook::add_new_contact(){
 		this->set_full();
 	}
 }
-void Phonebook::init_contacts(){
+void Phonebook::init_contacts()
+{
 	this->_contact[this->_index].set_first_name("");
 	this->_contact[this->_index].set_last_name("");
 	this->_contact[this->_index].set_nickname("");
 	this->_contact[this->_index].set_phone_number("");
 	this->_contact[this->_index].set_darkest_secret("");
 }
-void Phonebook::print_contact_atribute(std::string str){
+void Phonebook::print_contact_atribute(std::string str)
+{
 	if (str.length() > 10)
 		std::cout << str.substr(0, 9) << ".|";
 	else if (str.length() < 10)

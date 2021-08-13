@@ -6,7 +6,7 @@
 /*   By: kmeeseek <kmeeseek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 20:39:01 by kmeeseek          #+#    #+#             */
-/*   Updated: 2021/08/08 20:34:32 by kmeeseek         ###   ########.fr       */
+/*   Updated: 2021/08/09 20:44:53 by kmeeseek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 # include <string>
 # include <iostream>
 
-class Contact {
-
+class Contact
+{
 	std::string _first_name;
 	std::string _last_name;
 	std::string _nickname;

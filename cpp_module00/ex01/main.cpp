@@ -6,7 +6,7 @@
 /*   By: kmeeseek <kmeeseek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 21:37:08 by kmeeseek          #+#    #+#             */
-/*   Updated: 2021/08/08 20:45:19 by kmeeseek         ###   ########.fr       */
+/*   Updated: 2021/08/09 20:44:42 by kmeeseek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ void print_header()
 	std::cout << "└-----------------------------------------------------┘" << std::endl;
 }
 
-int	main() {
-	
+int	main()
+{
 	Phonebook book;
 	std::string line;
 

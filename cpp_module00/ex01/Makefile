@@ -6,7 +6,7 @@
 #    By: kmeeseek <kmeeseek@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/16 20:21:08 by kmeeseek          #+#    #+#              #
-#    Updated: 2021/08/03 21:39:57 by kmeeseek         ###   ########.fr        #
+#    Updated: 2021/08/12 20:00:08 by kmeeseek         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ OBJS = $(INPUT:.cpp=.o)
 
 all: $(NAME)
 $(NAME): $(OBJS)
-	clang++ $(OBJS) $(CFLAGS) -o $(NAME)
+	clang++ $(OBJS) $(CFLAGS) -o $(NAME) -std=c++98
 %.o: %.cpp
 	clang++ $(CFLAGS) -c $< -o $(<:.cpp=.o)
 clean:
