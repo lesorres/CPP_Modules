@@ -1,0 +1,6 @@
+this string was readed from file 1
+aaabla bla bla
+hello
+blann
+jjjbla
+267372367236542763547265346523654
