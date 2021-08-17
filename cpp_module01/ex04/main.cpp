@@ -6,7 +6,7 @@
 /*   By: kmeeseek <kmeeseek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/16 21:35:50 by kmeeseek          #+#    #+#             */
-/*   Updated: 2021/08/17 18:07:22 by kmeeseek         ###   ########.fr       */
+/*   Updated: 2021/08/17 18:49:18 by kmeeseek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,17 +40,17 @@ const std::string get_otput_file_name(std::string file1)
 		p++;
 	}
 	file1 = file1.append(".replace");
-	std::cout << file1;
 	return (file1);
 }
 
-int main (int argc, char **argv)
+int replace(int argc, char **argv)
 {
 	if (argc != 4)
 	{
-		std::cout << "error: please provide filename and two strings" << std::endl;
+		std::cout << " error: please provide filename and two strings" << std::endl;
 		return(1);
 	}
+
 	const std::string file1 = argv[1];
 	const std::string s1 = argv[2];
 	const std::string s2 = argv[3];
@@ -59,7 +59,7 @@ int main (int argc, char **argv)
 	std::ifstream inf(file1);
 	if (!inf)
 	{
-		std::cerr << file1 << "couldn't be opened for reading" << std::endl;
+		std::cerr << file1 << " couldn't be opened for reading" << std::endl;
 		return (1);
 	}
 	std::ofstream outf(file2);
@@ -68,13 +68,12 @@ int main (int argc, char **argv)
 		std::cerr << file2 << "couldn't be opened for writing" << std::endl;
 		return (1);
 	}
-	// std::string str;
-	// while (inf)
-	// {
-	// 	std::getline (inf, str);
-	// 	outf << str << std::endl;
-	// }
 	for (std::string str; std::getline(inf, str);)
 		outf << proccessStr(str, s1, s2) << std::endl;
 	return (0);
+}
+
+int main (int argc, char **argv)
+{
+	return (replace(argc, argv));
 }
