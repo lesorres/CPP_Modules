@@ -6,17 +6,11 @@
 /*   By: kmeeseek <kmeeseek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/17 20:06:44 by kmeeseek          #+#    #+#             */
-/*   Updated: 2021/08/18 21:07:17 by kmeeseek         ###   ########.fr       */
+/*   Updated: 2021/08/18 21:19:00 by kmeeseek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Karen.hpp"
-
-// void SetMember(void (Karen::*Ptype)(void))
-// {
-//     (karen.*Ptype)(); // вызов метода из объекта по указателю fPtr
-// }
-
 
 int main ()
 {
