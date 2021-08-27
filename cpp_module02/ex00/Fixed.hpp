@@ -6,7 +6,7 @@
 /*   By: kmeeseek <kmeeseek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 22:03:02 by kmeeseek          #+#    #+#             */
-/*   Updated: 2021/08/27 19:22:40 by kmeeseek         ###   ########.fr       */
+/*   Updated: 2021/08/27 21:12:39 by kmeeseek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ class Fixed
 
 		Fixed &operator=(Fixed const &prm);
 
-		int getRawBits( void ) const; //returns the raw value of the fixed point value
-		void setRawBits( int const raw ); //sets the raw value of the fixed point value
+		int getRawBits( void ) const;
+		void setRawBits( int const raw );
 };

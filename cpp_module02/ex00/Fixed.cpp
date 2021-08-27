@@ -6,7 +6,7 @@
 /*   By: kmeeseek <kmeeseek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 22:13:42 by kmeeseek          #+#    #+#             */
-/*   Updated: 2021/08/27 20:10:12 by kmeeseek         ###   ########.fr       */
+/*   Updated: 2021/08/27 21:35:58 by kmeeseek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ Fixed &Fixed::operator=(Fixed const &prm)
 	std::cout << "Assignation operator called" << std::endl;
 	if (this == &prm)
 		return (*this);
-	this->_fpVal = prm.getRawBits();
+	// this->_fpVal = prm.getRawBits();
+	this->setRawBits(prm.getRawBits());
 	return (*this);
 }
 
