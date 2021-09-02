@@ -6,7 +6,7 @@
 /*   By: kmeeseek <kmeeseek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 20:13:51 by kmeeseek          #+#    #+#             */
-/*   Updated: 2021/09/01 22:44:58 by kmeeseek         ###   ########.fr       */
+/*   Updated: 2021/09/01 22:45:40 by kmeeseek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void ClapTrap::Init(void)
 	_Hitpoints = 10;
 	_EnergyPt = 10;
 	_AttackDmg = 0;
-	std::cout << "ClapTrap " << _Name << " entered the game\n";
+	std::cout << "ClapTrap "<< _Name << " entered the game\n";
 }
 
 ClapTrap::ClapTrap()
