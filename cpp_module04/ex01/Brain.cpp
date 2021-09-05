@@ -1,28 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmeeseek <kmeeseek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/17 20:06:44 by kmeeseek          #+#    #+#             */
-/*   Updated: 2021/08/18 21:40:05 by kmeeseek         ###   ########.fr       */
+/*   Created: 2021/09/05 17:31:20 by kmeeseek          #+#    #+#             */
+/*   Updated: 2021/09/05 19:12:08 by kmeeseek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Karen.hpp"
+#include "Brain.hpp"
 
-int main ()
+Brain::Brain()
 {
-	std::string line;
-	Karen karen;
-	std::cout << "Here what you can type to see Karen's response:\n\n"\
-	<< "\"Debug\"\n"\
-	<< "\"Info\"\n"\
-	<< "\"Warning\"\n"\
-	<< "\"Error\"\n\n"\
-	<< "Please, type your message: ";
-	std::getline(std::cin, line);
-	karen.complain(line);
-	return (0);
+	std::cout << "Default constructor for Brain was called\n";
+}
+
+Brain::~Brain()
+{
+	std::cout << "Destructor for Brain was called\n";
+}
+
+Brain::Brain(Brain const &src)
+{
+	*this = src;
+}
+
+Brain &Brain::operator=(Brain const &src)
+{
+	if (this == &src)
+		return (*this);
+	int i = 0;
+	while (i < 100)
+	{
+		this->idea[i] = src.idea[i];
+		i++;
+	}
+	return(*this);
 }

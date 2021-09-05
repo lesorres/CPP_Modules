@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmeeseek <kmeeseek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/17 20:06:44 by kmeeseek          #+#    #+#             */
-/*   Updated: 2021/08/18 21:40:05 by kmeeseek         ###   ########.fr       */
+/*   Created: 2021/09/04 17:20:33 by kmeeseek          #+#    #+#             */
+/*   Updated: 2021/09/05 17:06:17 by kmeeseek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Karen.hpp"
+#ifndef CAT_HPP
+# define CAT_HPP
+# include "Animal.hpp"
 
-int main ()
+class Cat : public Animal
 {
-	std::string line;
-	Karen karen;
-	std::cout << "Here what you can type to see Karen's response:\n\n"\
-	<< "\"Debug\"\n"\
-	<< "\"Info\"\n"\
-	<< "\"Warning\"\n"\
-	<< "\"Error\"\n\n"\
-	<< "Please, type your message: ";
-	std::getline(std::cin, line);
-	karen.complain(line);
-	return (0);
-}
+public:
+	Cat();
+	Cat(Cat const &src);
+	virtual ~Cat();
+	Cat &operator=(Cat const &src);
+
+	virtual void makeSound() const;
+};
+
+# endif

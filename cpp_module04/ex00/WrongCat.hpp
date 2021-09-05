@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmeeseek <kmeeseek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/17 20:06:44 by kmeeseek          #+#    #+#             */
-/*   Updated: 2021/08/18 21:40:05 by kmeeseek         ###   ########.fr       */
+/*   Created: 2021/09/04 17:20:33 by kmeeseek          #+#    #+#             */
+/*   Updated: 2021/09/05 17:38:09 by kmeeseek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Karen.hpp"
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
+# include "WrongAnimal.hpp"
 
-int main ()
+class WrongCat : public WrongAnimal
 {
-	std::string line;
-	Karen karen;
-	std::cout << "Here what you can type to see Karen's response:\n\n"\
-	<< "\"Debug\"\n"\
-	<< "\"Info\"\n"\
-	<< "\"Warning\"\n"\
-	<< "\"Error\"\n\n"\
-	<< "Please, type your message: ";
-	std::getline(std::cin, line);
-	karen.complain(line);
-	return (0);
-}
+public:
+	WrongCat();
+	WrongCat(WrongCat const &src);
+	~WrongCat();
+	WrongCat &operator=(WrongCat const &src);
+
+	void makeSound() const;
+};
+
+# endif

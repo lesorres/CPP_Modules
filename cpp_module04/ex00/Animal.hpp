@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmeeseek <kmeeseek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/17 20:06:44 by kmeeseek          #+#    #+#             */
-/*   Updated: 2021/08/18 21:40:05 by kmeeseek         ###   ########.fr       */
+/*   Created: 2021/09/04 17:00:54 by kmeeseek          #+#    #+#             */
+/*   Updated: 2021/09/05 17:08:57 by kmeeseek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Karen.hpp"
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
+# include <iostream>
 
-int main ()
+class Animal
 {
-	std::string line;
-	Karen karen;
-	std::cout << "Here what you can type to see Karen's response:\n\n"\
-	<< "\"Debug\"\n"\
-	<< "\"Info\"\n"\
-	<< "\"Warning\"\n"\
-	<< "\"Error\"\n\n"\
-	<< "Please, type your message: ";
-	std::getline(std::cin, line);
-	karen.complain(line);
-	return (0);
-}
+	protected:
+		std::string _Type;
+	public:
+		Animal();
+		Animal(Animal const &src);
+		virtual ~Animal();
+
+		Animal &operator=(Animal const &src);
+		virtual void makeSound() const;
+		std::string getType() const;
+};
+
+#endif

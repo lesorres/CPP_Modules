@@ -6,12 +6,11 @@
 /*   By: kmeeseek <kmeeseek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 22:13:42 by kmeeseek          #+#    #+#             */
-/*   Updated: 2021/08/27 21:35:58 by kmeeseek         ###   ########.fr       */
+/*   Updated: 2021/08/27 21:59:15 by kmeeseek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <iostream>
 
 Fixed::Fixed()
 {
@@ -35,7 +34,6 @@ Fixed &Fixed::operator=(Fixed const &prm)
 	std::cout << "Assignation operator called" << std::endl;
 	if (this == &prm)
 		return (*this);
-	// this->_fpVal = prm.getRawBits();
 	this->setRawBits(prm.getRawBits());
 	return (*this);
 }

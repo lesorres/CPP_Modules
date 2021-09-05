@@ -6,7 +6,7 @@
 /*   By: kmeeseek <kmeeseek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 22:13:42 by kmeeseek          #+#    #+#             */
-/*   Updated: 2021/08/30 22:44:44 by kmeeseek         ###   ########.fr       */
+/*   Updated: 2021/08/31 17:51:08 by kmeeseek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,36 +16,30 @@ const int Fixed::_numOfFb = 8;
 
 Fixed::Fixed()
 {
-	// std::cout << "Default constructor called" << std::endl;
 	_fpVal = 0;
 }
 
 Fixed::Fixed(int i)
 {
-	// std::cout << "Int constructor called" << std::endl;
 	_fpVal = i <<_numOfFb;
 }
 
 Fixed::Fixed(float f)
 {
-	// std::cout << "Float constructor called" << std::endl;
 	_fpVal = roundf(f * (1 << _numOfFb));
 }
 
 Fixed::Fixed(Fixed const &src)
 {
-	// std::cout << "Copy constructor called" << std::endl;
 	*this = src;
 }
 
 Fixed::~Fixed()
 {
-	// std::cout << "Destructor called" << std::endl;
 }
 
 Fixed &Fixed::operator=(Fixed const &prm)
 {
-	// std::cout << "Assignation operator called" << std::endl;
 	if (this == &prm)
 		return (*this);
 	this->setRawBits(prm.getRawBits());

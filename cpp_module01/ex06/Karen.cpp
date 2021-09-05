@@ -6,7 +6,7 @@
 /*   By: kmeeseek <kmeeseek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/17 18:57:08 by kmeeseek          #+#    #+#             */
-/*   Updated: 2021/08/18 21:53:36 by kmeeseek         ###   ########.fr       */
+/*   Updated: 2021/08/18 22:15:39 by kmeeseek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void Karen::init_input_array()
 {
-	_input[0] = "Debug";
-	_input[1] = "Info";
-	_input[2] = "Warning";
-	_input[3] = "Error";
+	_input[0] = "DEBUG";
+	_input[1] = "INFO";
+	_input[2] = "WARNING";
+	_input[3] = "ERROR";
 }
 void Karen::init_method_array()
 {
@@ -46,33 +46,38 @@ void Karen::complain(std::string level)
 	switch (i)
 	{
 		case 4:
-			std::cout << "error: incorect word";
+			std::cout << "[ Probably complaining about insignificant problems ]\n";
 			break;
 		default:
-			(this->*this->methods[i])();
+			while (i < 4)
+				(this->*this->methods[i++])();
 			break;
 	}
 }
-void Karen::debug( void )
+void Karen::debug(void)
 {
-	std::cout << "I love to get extra bacon for my "\
-	<< "7XL-double-cheese-triple-pickle-special-ketchup burger. I just love it!"\
+	std::cout << "[ DEBUG ]\n"\
+	<< "I love to get extra bacon for my "\
+	<< "7XL-double-cheese-triple-pickle-special-ketchup burger. I just love it!\n"\
 	<< std::endl;
 }
-void Karen::info( void )
+void Karen::info(void)
 {
-	std::cout << "I cannot believe adding extra bacon cost more money. "\
-	<< "You don’t put enough! If you did I would not have to ask for it!"\
+	std::cout << "[ INFO ]\n"\
+	<< "I cannot believe adding extra bacon cost more money. "\
+	<< "You don’t put enough! If you did I would not have to ask for it!\n"\
 	<< std::endl;
 }
-void Karen::warning( void )
+void Karen::warning(void)
 {
-	std::cout << "I think I deserve to have some extra bacon for free. "\
-	<< "I’ve been coming here for years and you just started working here last month."\
+	std::cout << "[ WARNING ]\n"\
+	<< "I think I deserve to have some extra bacon for free. "\
+	<< "I’ve been coming here for years and you just started working here last month.\n"\
 	<< std::endl;
 }
-void Karen::error( void )
+void Karen::error(void)
 {
-	std::cout << "This is unacceptable, I want to speak to the manager now."\
+	std::cout << "[ ERROR ]\n"\
+	<< "This is unacceptable, I want to speak to the manager now.\n"\
 	<< std::endl;
 }
