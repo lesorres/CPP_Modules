@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmeeseek <kmeeseek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/04 18:41:52 by kmeeseek          #+#    #+#             */
-/*   Updated: 2021/09/06 20:21:52 by kmeeseek         ###   ########.fr       */
+/*   Created: 2021/09/04 17:01:06 by kmeeseek          #+#    #+#             */
+/*   Updated: 2021/09/06 20:39:07 by kmeeseek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "Animal.hpp"
 
-Cat::Cat()
+Animal::Animal()
 {
-	std::cout << "Default constructor for Cat was called, type was set to \"Cat\"\n";
-	_Type = "Cat";
-	_catBrain = new Brain();
+	std::cout << "Default constructor for Animal was called, no type was set\n";
+	_Type = "no type";
 }
 
-Cat::~Cat()
+Animal::~Animal()
 {
-	std::cout << "Destructor for Cat was called\n";
-	delete _catBrain;
+	std::cout << "Destructor for Animal was called\n";
 }
 
-Cat::Cat(Cat const &src)
+Animal::Animal(Animal const &src)
 {
-	std::cout << "Copy constructor for Dog was called\n";
 	*this = src;
 }
 
-Cat &Cat::operator=(Cat const &src)
+Animal &Animal::operator=(Animal const &src)
 {
 	if (this == &src)
 		return (*this);
@@ -39,12 +36,7 @@ Cat &Cat::operator=(Cat const &src)
 	return(*this);
 }
 
-void Cat::makeSound() const
+std::string Animal::getType() const
 {
-	std::cout << "makeSound method was called for " << _Type << " making \"MEOW MEOW\" sound\n";
-}
-
-Brain* Cat::getBrain()
-{
-	return(_catBrain);
+	return(_Type);
 }

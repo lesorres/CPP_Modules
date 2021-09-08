@@ -6,7 +6,7 @@
 /*   By: kmeeseek <kmeeseek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/04 17:24:46 by kmeeseek          #+#    #+#             */
-/*   Updated: 2021/09/06 20:15:32 by kmeeseek         ###   ########.fr       */
+/*   Updated: 2021/09/06 20:51:27 by kmeeseek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void fillInArray( Animal* array[10] )
 
 int main()
 {
+	// Animal animal;
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 	delete j;//should not create a leak

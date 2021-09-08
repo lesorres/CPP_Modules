@@ -6,45 +6,40 @@
 /*   By: kmeeseek <kmeeseek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/04 17:24:46 by kmeeseek          #+#    #+#             */
-/*   Updated: 2021/09/06 20:15:32 by kmeeseek         ###   ########.fr       */
+/*   Updated: 2021/09/08 23:16:15 by kmeeseek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Animal.hpp"
-# include "Dog.hpp"
-# include "Cat.hpp"
-# include "Brain.hpp"
-
-void fillInArray( Animal* array[10] )
-{
-	for (int i = 0; i < 5; ++i)
-		array[i] = new Dog();
-	for (int i = 5; i < 10; ++i)
-		array[i] = new Cat();
-}
+#include "AMateria.hpp"
+#include "ICharacter.hpp"
+#include "IMateriaSource.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
+#include "Character.hpp"
+#include "MateriaSource.hpp"
 
 int main()
 {
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	delete j;//should not create a leak
-	delete i;
-	
-	Animal *array[10];
-	fillInArray(array);
-	
-	std::cout << "\n";
-	array[2]->makeSound();
-	array[6]->makeSound();
-	std::cout << "\n";
+	IMateriaSource* src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
 
-	for (int i = 0; i < 10; ++i)
-		delete array[i];
-	std::cout << "\n";
-	
-	Dog dog1;
-	Dog dog2(dog1);
-	
-	std::cout << "\nfirst dog brain adress: " << dog1.getBrain() << "\n"
-	<< "second dog brain adress: " << dog2.getBrain() << "\n\n";
+	ICharacter* me = new Character("me");
+
+	AMateria* tmp;
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+
+	ICharacter* bob = new Character("bob");
+
+	me->use(0, *bob);
+	me->use(1, *bob);
+
+	delete bob;
+	delete me;
+	delete src;
+
+	return 0;
 }
