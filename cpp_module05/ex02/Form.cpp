@@ -6,7 +6,7 @@
 /*   By: kmeeseek <kmeeseek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 22:30:17 by kmeeseek          #+#    #+#             */
-/*   Updated: 2021/09/11 22:11:15 by kmeeseek         ###   ########.fr       */
+/*   Updated: 2021/09/12 22:08:26 by kmeeseek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,21 +56,15 @@ int Form::getSignGrade() const
 
 int Form::getExecGrade() const
 {
-	return(_SignGrade);
+	return(_ExecGrade);
 }
 
 void Form::beSigned(Bureaucrat &bureaucrat)
 {
 	if (bureaucrat.getGrade() > this->getSignGrade())
-	{
-		std::cout << bureaucrat.getName() << " cannot sign " << this->getName() << " because ";
 		throw Bureaucrat::GradeTooLowException();
-	}
 	else
-	{
 		_Sign = 1;
-		std::cout << bureaucrat.getName() << " signs " << this->getName() << "\n";
-	}
 }
 
 const char *Form::GradeTooHighException::what() const throw()
@@ -81,6 +75,16 @@ const char *Form::GradeTooHighException::what() const throw()
 const char *Form::GradeTooLowException::what() const throw()
 {
 	return ("Grade is too low");
+}
+
+const char *Form::FormNotSignedException::what() const throw()
+{
+	return ("Form is not signed");
+}
+
+const char *Form::FilestreamException::what() const throw()
+{
+	return ("Ofstream Error: file stream hasn't an associated file");
 }
 
 std::ostream &operator<<(std::ostream &o, const Form &f)

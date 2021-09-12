@@ -6,7 +6,7 @@
 /*   By: kmeeseek <kmeeseek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 18:51:40 by kmeeseek          #+#    #+#             */
-/*   Updated: 2021/09/10 22:19:18 by kmeeseek         ###   ########.fr       */
+/*   Updated: 2021/09/12 22:25:21 by kmeeseek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class Bureaucrat
 	private:
 		const std::string _Name;
 		int _Grade;
+		Bureaucrat();
 
 	public:
 		Bureaucrat(std::string name, int grade);

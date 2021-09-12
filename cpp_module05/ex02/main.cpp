@@ -6,59 +6,61 @@
 /*   By: kmeeseek <kmeeseek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 18:51:45 by kmeeseek          #+#    #+#             */
-/*   Updated: 2021/09/11 22:09:26 by kmeeseek         ###   ########.fr       */
+/*   Updated: 2021/09/12 21:12:24 by kmeeseek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 #include "Form.hpp"
+
+// void testEachBureaucrat(Bureaucrat &bureaucrat)
+// {
+// 	ShrubberyCreationForm shrubbery("Home");
+// 	bureaucrat.executeForm(shrubbery);
+// 	bureaucrat.signForm(shrubbery);
+// 	bureaucrat.executeForm(shrubbery);
+
+// 	std::cout << "\n";
+// }
+
+void testEachBureaucrat(Bureaucrat &bureaucrat, Form& form)
+{
+	bureaucrat.executeForm(form);
+	bureaucrat.signForm(form);
+	bureaucrat.executeForm(form);
+
+	std::cout << "\n";
+}
 
 int main ()
 {
-	try
-	{
-		Form form1("Form101", 10, 10);
-		Form form5("Form105", 151, 151);
-		Form form0("Form100", 0, 0);
-	}
-	catch (std::exception & e)
-	{
-		std::cout << e.what() << "\n";
-	}
-	std::cout << "\n";
-	
-	try
-	{
-		Bureaucrat Bob ("Bob", 150);
-		Bureaucrat Rob ("Rob", 50);
-		Bureaucrat Tim ("Tim", 1);
-
-		Form form1("Form101", 10, 10);
-		Form form7("Form107", 70, 70);
-
-		Bob.signForm(form7);
-		Rob.signForm(form1);
-	}
-	catch (std::exception & e)
-	{
-		std::cout << e.what() << "\n";
-	}
+	ShrubberyCreationForm shrubbery("Home");
+	RobotomyRequestForm robotomy("Heart of Gold Spaceship");
+	PresidentialPardonForm presidential("Trillian");
 	std::cout << "\n";
 
-	try
-	{
-		Bureaucrat Bob ("Bob", 150);
-		Bureaucrat Rob ("Rob", 50);
-		Bureaucrat Tim ("Tim", 1);
+	Bureaucrat Bob("Bob", 2);
+	Bureaucrat Tim("Tim", 67);
+	Bureaucrat Rob("Rob", 140);
+	std::cout << "\n";
 
-		Form form1("Form101", 10, 10);
-		Form form7("Form107", 70, 70);
+	std::cout << "--- Test with shrubbery form ---\n\n";
+	testEachBureaucrat(Bob, shrubbery);
+	testEachBureaucrat(Tim, shrubbery);
+	testEachBureaucrat(Rob, shrubbery);
+	std::cout << "\n";
 
-		Rob.signForm(form7);
-		Tim.signForm(form1);
-	}
-	catch (std::exception & e)
-	{
-		std::cout << e.what() << "\n";
-	}
+	std::cout << "--- Test with robotomy form ---\n\n";
+	testEachBureaucrat(Bob, robotomy);
+	testEachBureaucrat(Tim, robotomy);
+	testEachBureaucrat(Rob, robotomy);
+	std::cout << "\n";
+
+	std::cout << "--- Test with presidential form ---\n\n";
+	testEachBureaucrat(Bob, presidential);
+	testEachBureaucrat(Tim, presidential);
+	testEachBureaucrat(Rob, presidential);
 }

@@ -6,7 +6,7 @@
 #    By: kmeeseek <kmeeseek@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/04 16:47:18 by kmeeseek          #+#    #+#              #
-#    Updated: 2021/09/11 22:04:10 by kmeeseek         ###   ########.fr        #
+#    Updated: 2021/09/12 21:17:03 by kmeeseek         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,6 @@ $(NAME): $(OBJS) $(HEAD)
 clean:
 	@$(RM) $(OBJS)
 fclean: clean
-	@$(RM) $(NAME)
+	@$(RM) $(NAME) Home_shrubbery
 re: fclean all
 .PHONY: all clean fclean re

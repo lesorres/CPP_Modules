@@ -6,7 +6,7 @@
 /*   By: kmeeseek <kmeeseek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 22:33:42 by kmeeseek          #+#    #+#             */
-/*   Updated: 2021/09/11 22:52:14 by kmeeseek         ###   ########.fr       */
+/*   Updated: 2021/09/12 22:15:07 by kmeeseek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,14 @@
 class ShrubberyCreationForm : public Form
 {
 	private:
-		FILE target;
-	public:
+		std::string _Target;
 		ShrubberyCreationForm();
-		~ShrubberyCreationForm();
+	public:
+		ShrubberyCreationForm(std::string target);
+		virtual ~ShrubberyCreationForm();
+		ShrubberyCreationForm(const ShrubberyCreationForm &src);
+		ShrubberyCreationForm &operator=(const ShrubberyCreationForm &src);
+
+		virtual void	execute(Bureaucrat const & executor) const;
+		std::string		getTarget() const;
 };
