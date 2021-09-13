@@ -6,7 +6,7 @@
 /*   By: kmeeseek <kmeeseek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/13 19:01:54 by kmeeseek          #+#    #+#             */
-/*   Updated: 2021/09/13 21:08:44 by kmeeseek         ###   ########.fr       */
+/*   Updated: 2021/09/13 21:33:45 by kmeeseek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ Form *Intern::makeForm(std::string formName, std::string formTarget)
 			std::cout << "Incorrect form name was given to the intern\n";
 			return (0);
 		default:
+			std::cout << "Intern creates " << formName << "\n";
 			return (this->*_methods[i])(formTarget);
 	}
 	return 0;
