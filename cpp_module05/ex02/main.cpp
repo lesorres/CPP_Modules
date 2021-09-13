@@ -6,7 +6,7 @@
 /*   By: kmeeseek <kmeeseek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 18:51:45 by kmeeseek          #+#    #+#             */
-/*   Updated: 2021/09/12 21:12:24 by kmeeseek         ###   ########.fr       */
+/*   Updated: 2021/09/13 20:31:20 by kmeeseek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,6 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "Form.hpp"
-
-// void testEachBureaucrat(Bureaucrat &bureaucrat)
-// {
-// 	ShrubberyCreationForm shrubbery("Home");
-// 	bureaucrat.executeForm(shrubbery);
-// 	bureaucrat.signForm(shrubbery);
-// 	bureaucrat.executeForm(shrubbery);
-
-// 	std::cout << "\n";
-// }
 
 void testEachBureaucrat(Bureaucrat &bureaucrat, Form& form)
 {

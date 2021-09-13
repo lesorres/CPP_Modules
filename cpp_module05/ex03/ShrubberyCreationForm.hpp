@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmeeseek <kmeeseek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/12 14:34:14 by kmeeseek          #+#    #+#             */
-/*   Updated: 2021/09/13 20:47:13 by kmeeseek         ###   ########.fr       */
+/*   Created: 2021/09/11 22:33:42 by kmeeseek          #+#    #+#             */
+/*   Updated: 2021/09/13 20:49:09 by kmeeseek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRESIDENTIALPARDONFORM_HPP
-#define PRESIDENTIALPARDONFORM_HPP
+#ifndef SHRUBBERYCREATIONFORM_HPP
+#define SHRUBBERYCREATIONFORM_HPP
 
 #include "Form.hpp"
 
-class PresidentialPardonForm : public Form
+class ShrubberyCreationForm : public Form
 {
 	private:
 		std::string _Target;
-		PresidentialPardonForm();
+		ShrubberyCreationForm();
 	public:
-		PresidentialPardonForm(std::string target);
-		virtual ~PresidentialPardonForm();
-		PresidentialPardonForm(const PresidentialPardonForm &src);
-		PresidentialPardonForm &operator=(const PresidentialPardonForm &src);
+		ShrubberyCreationForm(std::string target);
+		virtual ~ShrubberyCreationForm();
+		ShrubberyCreationForm(const ShrubberyCreationForm &src);
+		ShrubberyCreationForm &operator=(const ShrubberyCreationForm &src);
 
 		virtual void	execute(Bureaucrat const & executor) const;
 		std::string		getTarget() const;
