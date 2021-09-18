@@ -6,20 +6,21 @@
 #    By: kmeeseek <kmeeseek@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/04 16:47:18 by kmeeseek          #+#    #+#              #
-#    Updated: 2021/09/13 20:41:01 by kmeeseek         ###   ########.fr        #
+#    Updated: 2021/09/16 20:56:12 by kmeeseek         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = intern
-INPUT = $(wildcard ./*.cpp)
-HEAD = *.hpp
+NAME = converter
+# INPUT = $(wildcard ./*.cpp)
+INPUT = $(filter-out ./test.cpp, $(wildcard ./*.cpp))
+# HEAD = *.hpp
 CFLAGS = -Wall -Wextra -Werror
 FLAGS = -std=c++98
 RM = rm -f
 OBJS = $(INPUT:.cpp=.o)
 
 all: $(NAME)
-$(NAME): $(OBJS) $(HEAD)
+$(NAME): $(OBJS) #$(HEAD)
 	clang++ $(OBJS) $(CFLAGS) $(FLAGS) -o $(NAME)
 %.o: %.cpp
 	clang++ $(CFLAGS) -c $< -o $(<:.cpp=.o)
