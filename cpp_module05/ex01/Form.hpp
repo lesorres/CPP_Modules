@@ -6,7 +6,7 @@
 /*   By: kmeeseek <kmeeseek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/10 22:30:14 by kmeeseek          #+#    #+#             */
-/*   Updated: 2021/09/11 21:13:03 by kmeeseek         ###   ########.fr       */
+/*   Updated: 2021/09/13 21:44:27 by kmeeseek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class Form
 		bool _Sign;
 		const int _SignGrade;
 		const int _ExecGrade;
+		Form();
 
 	public:
 		Form(std::string name, int signGrade, int execGrade);
