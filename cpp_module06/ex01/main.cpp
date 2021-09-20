@@ -5,22 +5,42 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmeeseek <kmeeseek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/14 19:11:22 by kmeeseek          #+#    #+#             */
-/*   Updated: 2021/09/19 15:45:21 by kmeeseek         ###   ########.fr       */
+/*   Created: 2021/09/19 18:35:38 by kmeeseek          #+#    #+#             */
+/*   Updated: 2021/09/19 22:43:51 by kmeeseek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "converter.hpp"
+#include <iostream>
 
-int main (int argc, char const **argv)
+struct Data
 {
-	int type = 0;
-	if (argc != 2)
-	{
-		std::cout << "error: invalid number of arguments is given\n";
-		return (0);
-	}
-	type = check_literal_type(argv[1]);
-	print_literal(argv[1], type);
+	int i;
+	char c;
+};
+
+uintptr_t serialize(Data* ptr)
+{
+	return(reinterpret_cast<uintptr_t>(ptr));
+}
+
+Data* deserialize(uintptr_t raw)
+{
+	return(reinterpret_cast<Data *>(raw));
+}
+
+int main ()
+{
+	Data *initial_ptr = new Data;
+	Data *copied_ptr;
+	uintptr_t raw;
+
+	raw = serialize(initial_ptr);
+	copied_ptr = deserialize(raw);
+
+	if (initial_ptr == copied_ptr)
+		std::cout << "poiners are the same\nfirst poiner's adress: " << initial_ptr
+		<< "\nsecond poiner's adress: "<< copied_ptr << "\n";
+
+	delete (initial_ptr);
 	return (0);
 }
