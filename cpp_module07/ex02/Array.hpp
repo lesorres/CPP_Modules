@@ -6,7 +6,7 @@
 /*   By: kmeeseek <kmeeseek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 17:43:09 by kmeeseek          #+#    #+#             */
-/*   Updated: 2021/09/22 23:14:26 by kmeeseek         ###   ########.fr       */
+/*   Updated: 2021/09/23 14:53:27 by kmeeseek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,10 @@ class Array
 		int size () const
 		{
 			return(_arrayLen);
+		}
+		T * getArrayAddress()
+		{
+			return (_array);
 		}
 		
 };
