@@ -1,30 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
+/*   mutantstack.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmeeseek <kmeeseek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/01 22:49:51 by kmeeseek          #+#    #+#             */
-/*   Updated: 2021/09/23 18:32:26 by kmeeseek         ###   ########.fr       */
+/*   Created: 2021/09/26 19:51:39 by kmeeseek          #+#    #+#             */
+/*   Updated: 2021/09/27 16:59:22 by kmeeseek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
-
-class DiamondTrap : public FragTrap, public ScavTrap
-{
-	private:
-		std::string _internalName;
-	public:
-		DiamondTrap();
-		DiamondTrap(std::string Name);
-		DiamondTrap(DiamondTrap const &src);
-		~DiamondTrap();
-		DiamondTrap &operator=(FragTrap const &prm);
-
-		void Init(void);
-		void attack(std::string const & target);
-		void whoAmI();
-};
