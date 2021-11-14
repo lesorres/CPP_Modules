@@ -1,7 +1,6 @@
 # CPP_Modules
 42 school project
 
-Learned in each module:
 
 module 00: Namespace, class, member functions, stdio stream, initialization lists, static, const, and other basics
 
